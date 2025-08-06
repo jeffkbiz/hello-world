@@ -1,0 +1,1 @@
+﻿Get-FileHash .\ArcGIS_DataStore_Windows_111_185221.exe

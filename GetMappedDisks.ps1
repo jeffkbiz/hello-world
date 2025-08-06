@@ -1,0 +1,1 @@
+﻿Get-WmiObject Win32_MappedLogicalDisk -computer ASRWS085010 | select name, providername

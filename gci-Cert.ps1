@@ -1,0 +1,1 @@
+﻿ gci -Recurse Cert: # | Export-Csv -Path C:\temp\certs.csv

@@ -1,0 +1,1 @@
+﻿Get-ADUser -Filter * | Select-Object -Property SID,Name | Where-Object -Property SID -like "S-1-5-18*"

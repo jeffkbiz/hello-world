@@ -1,0 +1,1 @@
+﻿Get-ChildItem \\stfesasrfileshareprd.file.core.windows.net\asrazfiles\RealProp | Where{$_.LastWriteTime -gt (Get-Date).AddDays(-23)}
