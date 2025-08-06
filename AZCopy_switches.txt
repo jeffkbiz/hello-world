@@ -1,0 +1,36 @@
+
+\\asrsvdfs\asr\users\jeff.kendig
+
+https://stfesasrfileshareprd.blob.core.windows.net/backup
+
+azcopy copy "C:\local\source\directory" "https://yourstorageaccount.blob.core.windows.net/yourcontainer/destination" --preserve-metadata --preserve-permissions
+
+
+azcopy copy "\\asrsvdfs\asr\users\jeff.kendig" "https://stfesasrfileshareprd.blob.core.windows.net/backup/H-Drives" --preserve-metadata --preserve-permissions --preserve-smb-info --preserve-smb-permissions
+
+
+
+azcopy login   my code 4/30 FWZ4WKCZC
+
+--preserve-metadata --preserve-permissions --preserve-smb-info  --preserve-smb-permissions 
+
+--block-blob-tier=cold  **did not work
+
+--Put-FileDates   **did not work
+
+--persist-smb-info  **did not work
+
+--delete-destination    =true or prompt
+
+
+azcopy sync "\\asrsvdfs\asr\users\jeff.kendig" "https://stfesasrfileshareprd.blob.core.windows.net/backup/H_Drives/jeff.kendig" --preserve-smb-info --block-blob-tier=cold
+
+
+
+
+FROM AZURE STORAGE EXPLORER JOB:
+$env:AZCOPY_CRED_TYPE = "Anonymous";
+$env:AZCOPY_CONCURRENCY_VALUE = "AUTO";
+./azcopy.exe copy "\\asrsvutilsqlp1\l$\Backup\AIMSMBF20220630.bak" "https://stfesasrfileshareprd.blob.core.windows.net/backup/AIMSMBF/jun302022/AIMSMBF20220630.bak?sv=2023-01-03&st=2025-05-02T17%3A05%3A53Z&se=2025-05-09T17%3A20%3A53Z&skoid=db9531d9-ee85-40aa-9643-ae1c6702f840&sktid=0ac3202f-c3e9-4f56-830d-017d09d16b3f&skt=2025-05-02T17%3A05%3A53Z&ske=2025-05-09T17%3A20%3A53Z&sks=b&skv=2023-01-03&sr=c&sp=rwl&sig=L0KspojUTAHGZxEJVQK0xexOr%2FblNXkP3ztSXFiZei0%3D" --overwrite=prompt --from-to=LocalBlob --blob-type BlockBlob --follow-symlinks --check-length=true --put-md5 --follow-symlinks --disable-auto-decoding=false --recursive --log-level=INFO;
+$env:AZCOPY_CRED_TYPE = "";
+$env:AZCOPY_CONCURRENCY_VALUE = "";

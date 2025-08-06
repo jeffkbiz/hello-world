@@ -1,0 +1,3 @@
+
+
+azcopy copy "\\asrsvdfs\asr\users\jeff.kendig" "https://stfesasrfileshareprd.blob.core.windows.net/backup/H-Drives" --preserve-metadata --preserve-permissions --preserve-smb-info --preserve-smb-permissionscls
